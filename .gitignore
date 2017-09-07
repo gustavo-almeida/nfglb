@@ -3,6 +3,9 @@
 
 ### Eclipse ###
 
+#testNG
+test-output/
+
 .metadata
 bin/
 tmp/
