@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="28209" started-at="2017-09-07T20:54:25Z" finished-at="2017-09-07T20:54:53Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="28209" started-at="2017-09-07T20:54:25Z" finished-at="2017-09-07T20:54:53Z">
+      <class name="testCases.MobileChromeFotogalleries">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testCases.MobileChromeFotogalleries@5034c75a]" name="setup" is-config="true" duration-ms="785" started-at="2017-09-07T17:54:24Z" finished-at="2017-09-07T17:54:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="checkDefaultEditorialsContentQty()[pri:0, instance:testCases.MobileChromeFotogalleries@5034c75a]" name="checkDefaultEditorialsContentQty" duration-ms="5580" started-at="2017-09-07T17:54:25Z" finished-at="2017-09-07T17:54:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkDefaultEditorialsContentQty -->
+        <test-method status="PASS" signature="checkDefaultOptionEditorials()[pri:0, instance:testCases.MobileChromeFotogalleries@5034c75a]" name="checkDefaultOptionEditorials" duration-ms="2401" started-at="2017-09-07T17:54:30Z" finished-at="2017-09-07T17:54:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkDefaultOptionEditorials -->
+        <test-method status="PASS" signature="checkEditorialsContentQtyAllPossibleOptions()[pri:0, instance:testCases.MobileChromeFotogalleries@5034c75a]" name="checkEditorialsContentQtyAllPossibleOptions" duration-ms="11846" started-at="2017-09-07T17:54:33Z" finished-at="2017-09-07T17:54:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEditorialsContentQtyAllPossibleOptions -->
+        <test-method status="PASS" signature="checkFotogalleriesTitle()[pri:0, instance:testCases.MobileChromeFotogalleries@5034c75a]" name="checkFotogalleriesTitle" duration-ms="2060" started-at="2017-09-07T17:54:45Z" finished-at="2017-09-07T17:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkFotogalleriesTitle -->
+        <test-method status="PASS" signature="checkRandomEditorialsContentQty()[pri:0, instance:testCases.MobileChromeFotogalleries@5034c75a]" name="checkRandomEditorialsContentQty" duration-ms="2472" started-at="2017-09-07T17:54:47Z" finished-at="2017-09-07T17:54:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkRandomEditorialsContentQty -->
+        <test-method status="PASS" signature="mostViewedAreaValidate()[pri:0, instance:testCases.MobileChromeFotogalleries@5034c75a]" name="mostViewedAreaValidate" duration-ms="1838" started-at="2017-09-07T17:54:49Z" finished-at="2017-09-07T17:54:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mostViewedAreaValidate -->
+        <test-method status="PASS" signature="recommendedAreaValidate()[pri:0, instance:testCases.MobileChromeFotogalleries@5034c75a]" name="recommendedAreaValidate" duration-ms="1992" started-at="2017-09-07T17:54:51Z" finished-at="2017-09-07T17:54:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- recommendedAreaValidate -->
+        <test-method status="PASS" signature="quitDriver()[pri:0, instance:testCases.MobileChromeFotogalleries@5034c75a]" name="quitDriver" is-config="true" duration-ms="69" started-at="2017-09-07T17:54:53Z" finished-at="2017-09-07T17:54:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- testCases.MobileChromeFotogalleries -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
