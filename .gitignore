@@ -78,6 +78,7 @@ local.properties
 
 # Package Files #
 *.jar
+!selenium-server-standalone-3.5.3.jar
 *.war
 *.ear
 *.zip
