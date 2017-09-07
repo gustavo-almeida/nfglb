@@ -39,6 +39,7 @@ public class MobileChromeFotogalleries {
 		
 		//Chrome Driver Declaration
 		File file = new File(path,"chromedriver");
+		file.setExecutable(true); //try force OS to change permission of execution of WebDriver
 		System.out.println("Os: " + systemName);
 		System.out.println("Chrome Driver: " + file.toString());
 		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
