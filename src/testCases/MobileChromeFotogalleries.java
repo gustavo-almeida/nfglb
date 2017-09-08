@@ -21,25 +21,33 @@ import pageObjects.FotogalleriesPage;
 public class MobileChromeFotogalleries {
 	
 	public static WebDriver driver;
-	public final String mobileFotogalleriesURL = "https://m.oglobo.globo.com/fotogalerias/";
+	public final String baseUrl = "https://m.oglobo.globo.com/fotogalerias/";
 
 	@BeforeSuite
 	public static void setup() {
 		//Check OS for correct chromedriver selection
 		String systemName = (System.getProperty("os.name").toLowerCase());
-		File path = new File ("driver/windows");
+		String chromeExec = "chromedriver";
+		
+		File path = new File("drivers");
+		File pathOs = new File("default");
+		
 		if (systemName.startsWith("linux")){
-			path = new File("drivers/linux");
-			path.setExecutable(true);
+			pathOs = new File(path, "linux");
 		}
 		else if (systemName.startsWith("mac")) {
-			path = new File("drivers/mac");
-			path.setExecutable(true);
+			pathOs = new File(path, "mac");
+		}
+		else {
+			pathOs = new File(path, "windows");
+			chromeExec = "chromedriver.exe";
 		}
 		
+		//fix for not executable some OS
+		File file = new File(pathOs, chromeExec);
+		file.setExecutable(true);
+
 		//Chrome Driver Declaration
-		File file = new File(path,"chromedriver");
-		file.setExecutable(true); //try force OS to change permission of execution of WebDriver
 		System.out.println("Os: " + systemName);
 		System.out.println("Chrome Driver: " + file.toString());
 		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
@@ -60,28 +68,28 @@ public class MobileChromeFotogalleries {
 	@Test
 	public void checkFotogalleriesTitle(){
 		// Go to Fotogalleries
-		driver.navigate().to(mobileFotogalleriesURL);
+		driver.navigate().to(baseUrl);
 		FotogalleriesPage rd = new FotogalleriesPage(driver);
 		rd.galleryTitle().isDisplayed();
 	}
 	
 	@Test
 	public void recommendedAreaValidate() {
-		driver.navigate().to(mobileFotogalleriesURL);
+		driver.navigate().to(baseUrl);
 		FotogalleriesPage rd = new FotogalleriesPage(driver);
 		assertEquals(rd.recommendedArea().size(), 6);
 	}
 	
 	@Test
 	public void mostViewedAreaValidate() {
-		driver.navigate().to(mobileFotogalleriesURL);
+		driver.navigate().to(baseUrl);
 		FotogalleriesPage rd = new FotogalleriesPage(driver);
 		assertEquals(rd.mostViewedArea().size(), 3);
 	}
 	
 	@Test
 	public void checkDefaultOptionEditorials() {
-		driver.navigate().to(mobileFotogalleriesURL);
+		driver.navigate().to(baseUrl);
 		FotogalleriesPage rd = new FotogalleriesPage(driver);
 		Select select = new Select(rd.selectEditorials());
 		assertEquals(select.getFirstSelectedOption().getText(), "Todas");
@@ -89,7 +97,7 @@ public class MobileChromeFotogalleries {
 
 	@Test
 	public void checkDefaultEditorialsContentQty() {
-		driver.navigate().to(mobileFotogalleriesURL);
+		driver.navigate().to(baseUrl);
 		FotogalleriesPage rd = new FotogalleriesPage(driver);
 		assertEquals(rd.lastFromArea().size(), 3);
 	}
@@ -97,7 +105,7 @@ public class MobileChromeFotogalleries {
 	@Test
 	//not the best testcase, but should works on a reduced time test suit, or as smoke-test
 	public void checkRandomEditorialsContentQty() {
-		driver.navigate().to(mobileFotogalleriesURL);
+		driver.navigate().to(baseUrl);
 		FotogalleriesPage rd = new FotogalleriesPage(driver);
 		
 		List<WebElement> editorialsList = new Select(rd.selectEditorials()).getOptions();
@@ -113,7 +121,7 @@ public class MobileChromeFotogalleries {
 	@Test
 	//not the best testcase because is validating more than one specification on a loop, but is a possible solution
 	public void checkEditorialsContentQtyAllPossibleOptions() {
-		driver.navigate().to(mobileFotogalleriesURL);
+		driver.navigate().to(baseUrl);
 		FotogalleriesPage rd = new FotogalleriesPage(driver);
 		List<WebElement> liOp = new Select(rd.selectEditorials()).getOptions();
 		for(WebElement eachElem:liOp){
